@@ -707,7 +707,9 @@ Here are some categories used by ASP.NET Core and Entity Framework Core, with no
 
  A *scope* can group a set of logical operations. This grouping can be used to attach the same data to each log that's created as part of a set. For example, every log created as part of processing a transaction can include the transaction ID.
 
-A scope is an `IDisposable` type that's returned by the <xref:Microsoft.Extensions.Logging.ILogger.BeginScope*> method and lasts until it's disposed. Use a scope by wrapping logger calls in a `using` block:
+A scope is an `IDisposable` type that's returned by the <xref:Microsoft.Extensions.Logging.ILogger.BeginScope*> method and lasts until it's disposed. Use a scope by wrapping logger calls in a `using` block.
+
+In the code example below the scope "Message attached to logs created in the using block" will be attached to every log statement within the using block:
 
 ::: moniker range=">= aspnetcore-3.0"
 
